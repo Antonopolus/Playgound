@@ -3,7 +3,7 @@ name: CI and CD
 on: 
   push:
     branches: 
-      - main
+      - master
 
 jobs:
   build:
@@ -15,12 +15,12 @@ jobs:
       - name: Setup .NET 5
         uses: actions/setup-dotnet@v1
         with: 
-            dotnet-version: '5.0.x'
+          dotnet-version: '5.0.x'
 
-      -name: Restore dependencies 
+      - name: Restore dependencies 
         run:  dotnet restore
 
-      -name: Build app
+      - name: Build app
         run: dotnet build -c Release --no-restore
 
 
