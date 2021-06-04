@@ -36,7 +36,10 @@ namespace PlaygroundTest
 
         public async Task<CustomerContex> CreateDbContext()
         {
-            var configuration = new ConfigurationBuilder().AddJsonFile("AppSettings.json").Build();
+            var configuration = new ConfigurationBuilder()
+                .AddJsonFile("AppSettings.json")
+                .AddEnvironmentVariables()
+                .Build();
             var optionsBuilder = new DbContextOptionsBuilder<CustomerContex>();
             optionsBuilder.UseSqlServer(configuration["ConnectionStrings:DefaultConnection"]);
             var context = new CustomerContex(optionsBuilder.Options);
