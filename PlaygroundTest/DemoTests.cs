@@ -37,7 +37,7 @@ namespace PlaygroundTest
         public async Task<CustomerContex> CreateDbContext()
         {
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("AppSettings.json")
+                .AddJsonFile("appSettings.json")
                 .AddEnvironmentVariables()
                 .Build();
             var optionsBuilder = new DbContextOptionsBuilder<CustomerContex>();
