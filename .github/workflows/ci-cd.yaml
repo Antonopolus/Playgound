@@ -33,7 +33,7 @@ jobs:
         run: dotnet publish -c Release -o ./out
 
       - name: Deploy to Azure Web Apps
-        uses: actions/webapps-deploy@v2
+        uses: azure/webapps-deploy@v2
         with: 
           app-name: PlaygroundWindows
           publish-profile: ${{secrets.AZURE_WEB_APP_PUBLISH_SECRET}}
